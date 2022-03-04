@@ -16,7 +16,7 @@ public class TagExtractor extends JFrame{
     JPanel main = new JPanel();
     JPanel controlPnl = new JPanel();
     JPanel scrollPnl = new JPanel();
-    JLabel titleLbl = new JLabel("Word Frequency Scanner", JLabel.CENTER);
+    JLabel titleLbl = new JLabel("Reading from: ", JLabel.CENTER);
 
     JButton quitBtn = new JButton("Exit");
     JButton chooseBtn = new JButton("Choose .txt File");
@@ -27,7 +27,7 @@ public class TagExtractor extends JFrame{
 
 
     public TagExtractor() throws IOException {
-        titleLbl.setFont(new Font("Times New Roman", Font.ITALIC, 36));
+        titleLbl.setFont(new Font("Times New Roman", Font.ITALIC, 28));
         titleLbl.setVerticalTextPosition(JLabel.BOTTOM);
         titleLbl.setHorizontalTextPosition(JLabel.CENTER);
         displayArea.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -111,6 +111,7 @@ public class TagExtractor extends JFrame{
                                 if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 
                                     selectedFile = chooser.getSelectedFile();
+                                    titleLbl.setText("Reading from: " + selectedFile.getName());
 
                                     //HashMap h=new HashMap();
                                     FileInputStream fin=new FileInputStream(selectedFile);
